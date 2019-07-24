@@ -8,3 +8,6 @@ def initialize(id=nil, name, type, db)
   @type = type
   @db = db
 end
+
+
+end 
