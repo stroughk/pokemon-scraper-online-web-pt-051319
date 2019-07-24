@@ -2,7 +2,7 @@ class Pokemon
   attr_accessor :id, :name, :type, :hp, :db
 
   def self.save(id, name, type, db)
-    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
+    db.execute("INSERT INTO pokemon (name, type, id ) VALUES (?, ?, ?)", name, type, id )
   end
 
   def self.find(id_num, db)
