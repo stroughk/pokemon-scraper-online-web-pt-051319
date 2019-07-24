@@ -7,14 +7,7 @@ def initialize(id:, name:, type:, hp: nil, db:)
  end
 
 def self.save(name, type, db)
-  if self.id
-    self.update
-  else
-    sql = <<-SQL
-    INSERT INTO pokemon (name, type)
-    VALUES (?, ?), name, type
-    SQL
-  end
+ db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
 end
 
 end
